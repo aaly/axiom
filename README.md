@@ -32,4 +32,5 @@ make help
 ## Notes
 
 * The CMake files do not provide install option yet (not needed for now)
-* License -> please review the license of the AXIOM project  git.axiom-project.eu/axiom-allocator/blob/master/COPYING
+* License -> [please review the license of the AXIOM project](http://git.axiom-project.eu/axiom-allocator/blob/master/COPYING)
+
