@@ -1,0 +1,24 @@
+# Driver for axiom_netdev_driver
+###obj-m := axiom_netdev.o
+#axiom_netdev-objs := ../../axiom-evi-allocator-drv/axiom_memory_dev.o axiom_kernel_api.o axiom_netdev_module.o axiom_kthread.o
+###axiom_netdev-objs := axiom_kernel_api.o axiom_netdev_module.o axiom_kthread.o
+ccflags-y += -Wall -I$(src)/../include/ -I$(src)/../../axiom-evi-allocator-drv/
+#axiom_kernel_api.o: -I../include
+
+
+obj-m := axiom_netdev.o axiom_mem_dev.o  axiom_mem_manager.o
+axiom_mem_manager-objs := ../../axiom-evi-allocator-drv/axiom_memory_manager.o
+axiom_mem_dev-objs := ../../axiom-evi-allocator-drv/axiom_memory_dev.o
+
+axiom_netdev-objs := axiom_kernel_api.o axiom_netdev_common.o axiom_kthread.o
+ifeq ($(ARCH), arm64)
+axiom_netdev-objs += axiom_netdev_arm.o
+axiom_mem_manager-objs += ../../axiom-evi-allocator-drv/axiom_memory_manager_arm.o
+axiom_mem_dev-objs += ../../axiom-evi-allocator-drv/axiom_memory_dev_arm.o
+else
+axiom_netdev-objs += axiom_netdev_x86.o
+axiom_mem_manager-objs += ../../axiom-evi-allocator-drv/axiom_memory_manager_x86.o
+axiom_mem_dev-objs += ../../axiom-evi-allocator-drv/axiom_memory_dev_x86.o
+endif
+
+

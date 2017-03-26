@@ -1,0 +1,21 @@
+# kernel modules for axiom_memory_dev and axiom_mem_manager
+
+#obj-m := axiom_memory_dev_x86.o
+#obj-m += axiom_memory_manager_x86.o
+
+
+
+axiom_mem_manager-objs := axiom_memory_manager.o
+obj-m += axiom_mem_manager.o
+
+axiom_mem_dev-objs := axiom_memory_dev.o
+obj-m += axiom_mem_dev.o
+
+ifeq ($(ARCH), arm64)
+axiom_mem_manager-objs += axiom_memory_manager_arm.o
+axiom_mem_dev-objs += axiom_memory_dev_arm.o
+else
+axiom_mem_manager-objs += axiom_memory_manager_x86.o
+axiom_mem_dev-objs += axiom_memory_dev_x86.o
+endif
+
