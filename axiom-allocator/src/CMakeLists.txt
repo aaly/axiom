@@ -6,8 +6,6 @@ set(CMAKE_MODULE_LINKER_FLAGS  "-Wl,-T ../allocator.lds.x86")
 set_target_properties(axiom-allocator PROPERTIES LINK_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../allocator.lds.x86)
 
 add_dependencies(axiom-allocator axiom_user_library libaxiom_run_api)
-
-add_dependencies(axiom-allocator axiom_user_library libaxiom_run_api)
 target_link_libraries(axiom-allocator axiom_user_library libaxiom_run_api)
 target_include_directories (axiom-allocator PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories (libaxiom_allocator_l1 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
