@@ -1,7 +1,7 @@
   CMake files for the AXIOM project
 ========================================
 
-This repository inclues the cmake lists skeleton for compiling the axiom repo
+This repository includes the cmake lists skeleton for compiling the axiom repo
 
 ![Alt Axiom software Architecture map ](architecture.png?raw=true "Architecture map")
 
@@ -34,6 +34,6 @@ make help
 
 ## Notes
 
-* The CMake files do not provide install option yet (not needed for now)
+* The CMake files do not provide any install options yet (not needed for now)
 * License -> [please review the license of the AXIOM project](http://git.axiom-project.eu/axiom-allocator/blob/master/COPYING)
 
