@@ -3,6 +3,9 @@
 
 This repository inclues the cmake lists skeleton for compiling the axiom repo
 
+![Alt Axiom software Architecture map ](architecture.png?raw=true "Architecture map")
+
+
 ## How to compile
 
 ```
