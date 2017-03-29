@@ -1,0 +1,9 @@
+Package: Axiom
+Version: 1.0-1
+Section: base
+Priority:
+Architecture: any
+Depends:
+Maintainer: A.Aly
+Description: Axiom project debian/ubuntu package
+ Made to easily copy and install during simulations
