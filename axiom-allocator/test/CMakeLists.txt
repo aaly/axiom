@@ -6,3 +6,5 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ../../axiom-allocator/a
 add_dependencies(axiom-allocator-test axiom-allocator)
 target_link_libraries (axiom-allocator-test LINK_PUBLIC axiom-allocator)
 
+install(TARGETS axiom-allocator-test
+        RUNTIME DESTINATION /usr/bin)

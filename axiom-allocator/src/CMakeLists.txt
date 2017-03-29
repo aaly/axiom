@@ -12,6 +12,6 @@ target_include_directories (axiom_allocator_l1 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR
 target_include_directories (axiom_allocator_l2 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 
-install(TARGETS axiom-allocator
-        ARCHIVE DESTINATION lib)
+install(TARGETS axiom-allocator axiom_allocator_l1 axiom_allocator_l2
+        ARCHIVE DESTINATION /usr/lib)
 

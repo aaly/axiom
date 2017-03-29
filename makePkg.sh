@@ -1,7 +1,10 @@
 #!/bin/bash
 
-mkdir -p pkg/usr/lib/
-cp /home/dude/tmp/axiom/axiom-allocator/src/usr/lib/libaxiom-allocator.a pkg/usr/lib/
+#mkdir -p pkg/
+
+rm -rf pkg &> /dev/zero
+
+cmake . && make DESTDIR=pkg/  install
 
 mkdir -p pkg/DEBIAN
 cp control pkg/DEBIAN

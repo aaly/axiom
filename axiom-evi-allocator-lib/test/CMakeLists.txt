@@ -11,3 +11,6 @@ target_link_libraries (testB LINK_PUBLIC axiom-allocator-library)
 target_link_libraries (testFreelist LINK_PUBLIC axiom-allocator-library)
 #target_link_libraries (aarch64_allocator_test LINK_PUBLIC axiom-allocator-library)
 
+install(TARGETS testA testB testFreelist
+        RUNTIME DESTINATION /usr/bin)
+

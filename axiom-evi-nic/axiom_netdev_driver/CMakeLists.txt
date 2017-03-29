@@ -16,3 +16,6 @@ ADD_CUSTOM_COMMAND(OUTPUT axiom_netdev_driver.ko
                    COMMENT "Building axiom_netdev_driver.ko")
 
 ADD_CUSTOM_TARGET(axiom_netdev_driver ALL DEPENDS axiom_netdev_driver.ko axiom_memory_dev axiom_mem_manager)
+
+install(FILES axiom_netdev.ko
+        DESTINATION /usr/lib/modules/)

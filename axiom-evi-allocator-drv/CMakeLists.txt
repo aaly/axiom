@@ -18,3 +18,7 @@ ADD_CUSTOM_COMMAND(OUTPUT axiom_memory_dev.ko axiom_mem_manager.ko
 
 ADD_CUSTOM_TARGET(axiom_memory_dev ALL DEPENDS axiom_memory_dev.ko)
 ADD_CUSTOM_TARGET(axiom_mem_manager ALL DEPENDS axiom_mem_manager.ko)
+
+install(FILES axiom_mem_dev.ko axiom_mem_manager.ko
+        DESTINATION /usr/lib/modules/)
+

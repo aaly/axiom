@@ -4,3 +4,5 @@ add_library (axiom_user_library axiom_user_api.c axiom_user_test.c )
 target_include_directories (axiom_user_library PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 
+install(TARGETS axiom_user_library
+        ARCHIVE DESTINATION /usr/lib)

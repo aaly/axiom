@@ -31,6 +31,13 @@ make VERBOSE=1
 make help
 ```
 
+## How to install
+
+in order to install the files make sure you run the "cmake ." command first
+
+```
+# assign whichever installation path you like to DESTDIR
+make DESTDIR=/
 
 ## Notes
 
