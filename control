@@ -2,7 +2,7 @@ Package: Axiom
 Version: 1.0-1
 Section: base
 Priority:
-Architecture: any
+Architecture: amd64
 Depends:
 Maintainer: A.Aly
 Description: Axiom project debian/ubuntu package
