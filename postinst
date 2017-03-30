@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+if [ ! -d "/lib/modules/$(uname -r)/updates/" ]
+then
+	mkdir "/lib/modules/$(uname -r)/updates/"
+fi
+cp -f /usr/lib/modules/*.ko "/lib/modules/$(uname -r)/updates/"
+echo "Running depmod, please wait ..."
+depmod -A
+echo "done running depmod"
+
+echo "loading modules ..."
+for file in /usr/lib/modules/*.ko
+do
+	kmod=${file%%.ko}
+	kmod=${kmod##*/}
+	echo "Loading $kmod ..."
+#	insmod $kmod
+	rmmod $kmod
+	insmod $file
+done
+echo "done loading modules"
