@@ -44,7 +44,7 @@ make DESTDIR=/
 
 ```
 # first update all repos 
-make DESTDIR=/
+./updateRepos.sh
 
 ```
 
@@ -53,9 +53,6 @@ make DESTDIR=/
 ./makePkg.sh
 
 ```
-
-
-
 
 
 ## Notes
