@@ -7,3 +7,5 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ../../axiom-allocator/a
 add_dependencies(axiom-rdma axiom_user_library  axiom-allocator axiom_run_api)
 target_link_libraries(axiom-rdma axiom_user_library  axiom-allocator axiom_run_api)
 
+install(TARGETS axiom-rdma
+        RUNTIME DESTINATION /usr/bin)

@@ -7,3 +7,5 @@ target_link_libraries(axiom-run  axiom_common axiom_user_library axiom-allocator
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
 
 
+install(TARGETS axiom-run
+        RUNTIME DESTINATION /usr/bin)

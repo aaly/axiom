@@ -9,3 +9,5 @@ add_dependencies(axiom-init axiom_user_library axiom-allocator axiom_common axio
 target_link_libraries(axiom-init axiom_user_library axiom-allocator axiom_common axiom_allocator_l1)
 
 
+install(TARGETS axiom-init
+        RUNTIME DESTINATION /usr/bin)

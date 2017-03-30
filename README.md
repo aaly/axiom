@@ -57,6 +57,5 @@ make DESTDIR=/
 
 ## Notes
 
-* The CMake files do not provide any install options yet (not needed for now)
 * License -> [please review the license of the AXIOM project](http://git.axiom-project.eu/axiom-allocator/blob/master/COPYING)
 
