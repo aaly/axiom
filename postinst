@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 if [ ! -d "/lib/modules/$(uname -r)/updates/" ]
 then
@@ -11,14 +11,15 @@ echo "done running depmod"
 
 echo "loading modules ..."
 #for file in /usr/lib/modules/*.ko
-mods=("axiom_mem_manager.ko" "axiom_mem_dev.ko" "axiom_netdev.ko") #keeping the order is important ....
-for file in  ${mods[@]}
+#keeping the order is important ....
+mods=("axiom_mem_manager.ko" "axiom_mem_dev.ko" "axiom_netdev.ko")
+for kmod in  ${mods[@]}
 do
 #	kmod=${file%%.ko}
 #	kmod=${kmod##*/}
 	echo "Loading $kmod ..."
 #	insmod $kmod
 	rmmod $kmod
-	insmod /usr/lib/modules/$file
+	insmod /usr/lib/modules/$kmod
 done
 echo "done loading modules"
