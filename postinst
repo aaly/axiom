@@ -19,7 +19,11 @@ do
 #	kmod=${kmod##*/}
 	echo "Loading $kmod ..."
 #	insmod $kmod
-	rmmod $kmod
+	loaded="$(lsmod | grep ${kmod%%.ko})"
+	if [ ! -z $loaded ]
+	then
+		rmmod $kmod
+	fi
 	insmod /usr/lib/modules/$kmod
 done
 echo "done loading modules"

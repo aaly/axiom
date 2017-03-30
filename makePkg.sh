@@ -1,15 +1,13 @@
 #!/bin/bash
 
-#mkdir -p pkg/
+rm -rf axiom &> /dev/zero
 
-rm -rf pkg &> /dev/zero
+cmake . && make DESTDIR=axiom/  install
 
-cmake . && make DESTDIR=pkg/  install
+mkdir -p axiom/DEBIAN
+cp control axiom/DEBIAN
+cp postinst axiom/DEBIAN
 
-mkdir -p pkg/DEBIAN
-cp control pkg/DEBIAN
-cp postinst pkg/DEBIAN
-
-dpkg-deb --build pkg
+dpkg-deb --build axiom
 
 
