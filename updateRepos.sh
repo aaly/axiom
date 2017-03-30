@@ -22,3 +22,4 @@ done
 #sed -e 's/__ld/_ld/g' -i axiom-allocator/src/axiom_allocator.c
 #sed -e 's/extern//g' -i axiom-allocator/src/axiom_allocator.c
 sed -e 's/#define USE_EXT_LDSCRIPT//g' -i axiom-allocator/src/axiom_allocator.c
+sed -e '/#include <stdlib.h>/ a\#define _GNU_SOURCE' -i axiom-evi-apps/axiom-run/master.c
