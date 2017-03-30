@@ -10,13 +10,15 @@ depmod -A
 echo "done running depmod"
 
 echo "loading modules ..."
-for file in /usr/lib/modules/*.ko
+#for file in /usr/lib/modules/*.ko
+mods=("axiom_mem_manager.ko" "axiom_mem_dev.ko" "axiom_netdev.ko") #keeping the order is important ....
+for file in  ${mods[@]}
 do
-	kmod=${file%%.ko}
-	kmod=${kmod##*/}
+#	kmod=${file%%.ko}
+#	kmod=${kmod##*/}
 	echo "Loading $kmod ..."
 #	insmod $kmod
 	rmmod $kmod
-	insmod $file
+	insmod /usr/lib/modules/$file
 done
 echo "done loading modules"
