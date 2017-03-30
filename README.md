@@ -38,6 +38,25 @@ in order to install the files make sure you run the "cmake ." command first
 ```
 # assign whichever installation path you like to DESTDIR
 make DESTDIR=/
+```
+
+## How to build a debian/ubuntu package
+
+```
+# first update all repos 
+make DESTDIR=/
+
+```
+
+```
+# run package making script
+./makePkg.sh
+
+```
+
+
+
+
 
 ## Notes
 
