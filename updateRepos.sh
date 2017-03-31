@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repos=("axiom-allocator" "axiom-evi-allocator-lib" "axiom-evi-nic" "axiom-evi-allocator-drv" "axiom-evi-apps")
+repos=("axiom-allocator" "axiom-evi-allocator-lib" "axiom-evi-nic" "axiom-evi-allocator-drv" "axiom-evi-apps" "axiom-evi-gasnet")
 
 for repo in ${repos[@]}
 do
@@ -10,9 +10,11 @@ do
 	if [[ "$repo" == "axiom-evi-allocator-drv" ]] || [[ "$repo" == "axiom-evi-nic" ]]
 	then
 		git pull origin axiom-x86-pci-ettore
+	elif [[ "$repo" == "axiom-evi-gasnet" ]]
+	then
+		git pull origin axiom
 	else
 		git pull origin master
-
 	fi
 	#echo "git clone https://git.axiom-project.eu/$repo"
 	cd ..
