@@ -13,13 +13,11 @@ SET(destdir "${CMAKE_CURRENT_LIST_DIR}/inst")
 add_subdirectory (axiom-evi-extrae)
 add_subdirectory (axiom-evi-nanox)
 add_subdirectory (axiom-evi-mcxx)
-#add_subdirectory (axiom-evi-allocator-lib)
-#add_subdirectory (axiom-allocator)
-#add_subdirectory (axiom-evi-apps)
-#add_subdirectory (axiom-evi-allocator-drv)
-#add_subdirectory (axiom-evi-nic)
-
-
+add_subdirectory (axiom-evi-allocator-lib)
+add_subdirectory (axiom-allocator)
+add_subdirectory (axiom-evi-apps)
+add_subdirectory (axiom-evi-allocator-drv)
+add_subdirectory (axiom-evi-nic)
 
 #add_custom_command(OUTPUT axiom.deb
 #		   COMMAND bash makePkg.sh)
