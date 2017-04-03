@@ -10,6 +10,7 @@ SET(CMAKE_INSTALL_PREFIX "")
 SET(sysroot "${CMAKE_CURRENT_LIST_DIR}/sysroot")
 SET(destdir "${CMAKE_CURRENT_LIST_DIR}/inst")
 
+add_subdirectory (axiom-evi-gasnet)
 add_subdirectory (axiom-evi-extrae)
 add_subdirectory (axiom-evi-nanox)
 add_subdirectory (axiom-evi-mcxx)
