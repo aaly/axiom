@@ -40,3 +40,11 @@ echo '	axiom_libraries_CFLAGS=""
 
 sed -e 's/PKG_CHECK_MODULES(\[axiom/#PKG_CHECK_MODULES(\[axiom/g' -i axiom-evi-gasnet/configure.in
 sed -e 's/PKG_CHECK_MODULES(\[evidence_lmm\]/#PKG_CHECK_MODULES(\[evidence_lmm\]/g' -i axiom-evi-gasnet/configure.in
+
+sed -e 's|CONDUIT_EXTRALIBCFLAGS =|CONDUIT_EXTRALIBCFLAGS = @axiom_libraries_CFLAGS@ @evidence_lmm_CFLAGS@ -I$(srcdir)/../../axiom-evi-nic/include -I$(srcdir)/../../axiom-evi-apps/include -I$(srcdir)/../../axiom-allocator/include |g' -i axiom-evi-gasnet/axiom-conduit/Makefile.am
+
+x86_64-linux-gnu/bits/time.h
+
+
+
+sed '/#include <gasnet_core_internal.h>/ a #include <time.h>' -i axiom-evi-gasnet/axiom-conduit/gasnet_core.c 
