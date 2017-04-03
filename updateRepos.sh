@@ -29,5 +29,6 @@ sed -e '11 i\#define _GNU_SOURCE' -i axiom-evi-apps/axiom-run/master.c
 
 sed -e 's/#define USE_EXT_LDSCRIPT/#ifdef __aarch64__\
 #define USE_EXT_LDSCRIPT\
-#endif/g' -i axiom-allocator/src/axiom_allocator.c
+#endif\
+#define USE_EXT_LDSCRIPT/g' -i axiom-allocator/src/axiom_allocator.c
 
