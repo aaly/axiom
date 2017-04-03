@@ -31,3 +31,12 @@ sed -e 's/#define USE_EXT_LDSCRIPT/#ifdef __aarch64__\
 #define USE_EXT_LDSCRIPT\
 #endif/g' -i axiom-allocator/src/axiom_allocator.c
 
+
+
+echo '	axiom_libraries_CFLAGS=""
+	AC_SUBST([axiom_libraries_CFLAGS])
+	evidence_lmm_CFLAGS=""
+	AC_SUBST([evidence_lmm_CFLAGS])' >> axiom-evi-gasnet/configure.in
+
+sed -e 's/PKG_CHECK_MODULES([axiom/#PKG_CHECK_MODULES([axiom/g' -i axiom-evi-gasnet/configure.in
+sed -e 's/PKG_CHECK_MODULES([evidence_lmm]/#PKG_CHECK_MODULES([evidence_lmm]/g' -i axiom-evi-gasnet/configure.in
