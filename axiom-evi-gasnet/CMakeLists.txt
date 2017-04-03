@@ -4,10 +4,13 @@ add_custom_target(GASNET ALL
 
 SET(installdir "${CMAKE_CURRENT_LIST_DIR}/pkg")
 
+${CMAKE_CURRENT_LIST_DIR}/axiom-evi-apps/include/;${CMAKE_CURRENT_LIST_DIR}/axiom-evi-nic/include/;${CMAKE_CURRENT_LIST_DIR}/axiom-allocator/include/
 add_custom_command(TARGET GASNET
                    COMMAND ./Bootstrap -y && ./configure --enable-udp --enable-debug --enable-trace --enable-backtrace --disable-parsync  --disable-smp --disable-pshm --disable-psm 
 							 --with-axiom-sysroot=/ --with-axiom-host=/ --build='x86_64-unknown-linux-gnu'
-							 --includedir=/home/abdallah/tmppp/axiom/axiom/usr/include/ --libdir=/home/abdallah/tmppp/axiom/axiom/usr/lib/ --includedir=/usr/include/)
+							 --includedir=${CMAKE_CURRENT_LIST_DIR}/axiom-evi-apps/include/,${CMAKE_CURRENT_LIST_DIR}/axiom-evi-nic/include/,${CMAKE_CURRENT_LIST_DIR}/axiom-allocator/include/ 
+	                  --libdir=${CMAKE_CURRENT_LIST_DIR}/axiom-evi-apps/include/,${CMAKE_CURRENT_LIST_DIR}/axiom-evi-nic/include/,${CMAKE_CURRENT_LIST_DIR}/axiom-allocator/include/
+			--includedir=/usr/include/)
 
 add_custom_command(TARGET GASNET
                    COMMAND make install DESTDIR=${installdir})
