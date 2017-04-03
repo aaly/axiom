@@ -9,3 +9,6 @@ add_subdirectory (axiom_switch)
 add_subdirectory (axiom_user_library)
 
 
+install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/include/ DESTINATION /usr/include
+        USE_SOURCE_PERMISSIONS)
+

@@ -13,3 +13,6 @@ add_custom_command(TARGET "Extrae"
 
 install(DIRECTORY ${installdir}/ DESTINATION /
 	USE_SOURCE_PERMISSIONS)
+install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/include/ DESTINATION /usr/include
+        USE_SOURCE_PERMISSIONS)
+

@@ -10,3 +10,6 @@ include_directories(../axiom-evi-nic/include/)
 add_subdirectory (src)
 add_subdirectory (test)
 
+install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/include/ DESTINATION /usr/include
+        USE_SOURCE_PERMISSIONS)
+

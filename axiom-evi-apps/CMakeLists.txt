@@ -17,3 +17,7 @@ add_subdirectory (axiom-run)
 add_subdirectory (axiom-traceroute)
 add_subdirectory (axiom-whoami)
 #add_subdirectory (tests)
+
+
+install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/include/ DESTINATION /usr/include
+        USE_SOURCE_PERMISSIONS)
