@@ -1,6 +1,7 @@
 #!/bin/bash
 
-repos=("axiom-allocator" "axiom-evi-allocator-lib" "axiom-evi-nic" "axiom-evi-allocator-drv" "axiom-evi-apps" "axiom-evi-gasnet")
+repos=( "axiom-allocator" "axiom-evi-allocator-lib" "axiom-evi-nic" "axiom-evi-allocator-drv" "axiom-evi-apps" \
+	"axiom-evi-extrae" "axiom-evi-gasnet" "axiom-evi-nanox" "axiom-evi-mcxx")
 
 for repo in ${repos[@]}
 do
@@ -10,7 +11,7 @@ do
 	if [[ "$repo" == "axiom-evi-allocator-drv" ]] || [[ "$repo" == "axiom-evi-nic" ]]
 	then
 		git pull origin axiom-x86-pci-ettore
-	elif [[ "$repo" == "axiom-evi-gasnet" ]]
+	elif [[ "$repo" == "axiom-evi-gasnet" ]] || [[ "$repo" == "axiom-evi-extrae" ]] || [[ "$repo" == "axiom-evi-nanox" ]] || [[ "$repo" == "axiom-evi-mcxx" ]]
 	then
 		git pull origin axiom
 	else
