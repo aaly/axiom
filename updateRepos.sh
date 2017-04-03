@@ -38,5 +38,5 @@ echo '	axiom_libraries_CFLAGS=""
 	evidence_lmm_CFLAGS=""
 	AC_SUBST([evidence_lmm_CFLAGS])' >> axiom-evi-gasnet/configure.in
 
-sed -e 's/PKG_CHECK_MODULES([axiom/#PKG_CHECK_MODULES([axiom/g' -i axiom-evi-gasnet/configure.in
-sed -e 's/PKG_CHECK_MODULES([evidence_lmm]/#PKG_CHECK_MODULES([evidence_lmm]/g' -i axiom-evi-gasnet/configure.in
+sed -e 's/PKG_CHECK_MODULES(\[axiom/#PKG_CHECK_MODULES(\[axiom/g' -i axiom-evi-gasnet/configure.in
+sed -e 's/PKG_CHECK_MODULES(\[evidence_lmm\]/#PKG_CHECK_MODULES(\[evidence_lmm\]/g' -i axiom-evi-gasnet/configure.in
