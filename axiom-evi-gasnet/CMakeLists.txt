@@ -1,3 +1,8 @@
+#make MANUAL_LIBCFLAGS=... Flags to add on the C compile for the GASNet libs
+#    make MANUAL_CFLAGS=...    Flags to add on the C compile for GASNet clients & tests
+#    make MANUAL_LDFLAGS=...   Linker flags to add for GASNet clients & tests
+#    make MANUAL_LIBS=...   
+
 add_custom_target(GASNET ALL
 		  DEPENDS axiom_run_api axiom_init_api axiom_common axiom_user_library
 			  axiom_switch axiom-allocator axiom_allocator_l1 axiom_allocator_l2)
@@ -9,7 +14,7 @@ add_custom_command(TARGET GASNET
 							 --build='x86_64-unknown-linux-gnu' --includedir=/usr/include/)
 
 add_custom_command(TARGET GASNET
-                   COMMAND make install DESTDIR=${installdir})
+                   COMMAND make install MANUAL_LIBCFLAGS='-fPIC' MANUAL_CFLAGS='-fPIC' MANUAL_LDFLAGS='-fPIC' MANUAL_LIBS='-fPIC' SEPARATE_CC=1 DESTDIR=${installdir})
 
 install(DIRECTORY ${installdir}/ DESTINATION /
 	USE_SOURCE_PERMISSIONS)
