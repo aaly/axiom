@@ -1,5 +1,5 @@
-add_custom_target(Nanox ALL)
-#		  DEPENDS Extrae GASNET)
+add_custom_target(Nanox ALL
+		  DEPENDS Extrae GASNET)
 
 SET(installdir "${CMAKE_CURRENT_LIST_DIR}/pkg")
 
@@ -37,8 +37,8 @@ add_custom_command(TARGET "Nanox"
 add_custom_command(TARGET "Nanox"
                    COMMAND ./bootstrap && ./configure  --disable-debug  --disable-performance
                                                      #--with-gasnet=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/local/gasnet/
-                                                      --with-gasnet-include=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/include/gasnet-instrumentation/
-                                                      --with-gasnet-lib=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/lib/gasnet-instrumentation/
+                                                      --with-gasnet-include=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/include/gasnet-performance/
+                                                      --with-gasnet-lib=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/lib/gasnet-performance/
 						      --with-gasnet=/usr/local/gasnet-performance/
 							--prefix=/usr --with-extrae=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-extrae/pkg/usr/)
 #                                                      --with-gasnet-lib=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/gasnet/lib/
