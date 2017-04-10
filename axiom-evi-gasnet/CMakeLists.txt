@@ -27,7 +27,8 @@ add_custom_command(TARGET GASNET
 							 --prefix=/usr/local/gasnet-performance)
 
 add_custom_command(TARGET GASNET
-                   COMMAND make install DESTDIR=${installdir} && make clean)
+                   COMMAND make install  MANUAL_LIBCFLAGS='-fPIC -DGASNETI_FORCE_PIC' MANUAL_CXXFLAGS='-fPIC -DGASNETI_FORCE_PIC' MANUAL_CFLAGS='-fPIC -DGASNETI_FORCE_PIC' 
+                          MANUAL_LDFLAGS='-fPIC -DGASNETI_FORCE_PIC' MANUAL_LIBS='-fPIC -DGASNETI_FORCE_PIC' SEPARATE_CC=1 DESTDIR=${installdir} && make clean)
 
 install(DIRECTORY ${installdir}/ DESTINATION /
 	USE_SOURCE_PERMISSIONS)
