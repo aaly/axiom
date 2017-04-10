@@ -11,7 +11,8 @@ add_custom_command(TARGET "Nanox"
 						      --with-gasnet-include=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/include/gasnet-debug
 			      			      --with-gasnet-lib=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/lib/gasnet-debug
 						      --disable-instrumentation --disable-instrumentation-debug CXXFLAGS='-fPIC' CFLAGS='-fPIC' --with-gasnet=/usr/local/gasnet-debug/
-							--prefix=/usr --with-extrae=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-extrae/pkg/usr/)
+							--prefix=/usr --with-extrae=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-extrae/pkg/usr/
+							LDFLAGS='-L${CMAKE_CURRENT_LIST_DIR}/../axiom-allocator/src/ -L${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-allocator-lib/src -L${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-nic/axiom_user_library/')
 
 add_custom_command(TARGET "Nanox"
                    COMMAND make install CXXFLAGS='-fPIC' CFLAGS='-fPIC' DESTDIR=${installdir} && make clean)
@@ -20,13 +21,12 @@ add_custom_command(TARGET "Nanox"
 
 
 add_custom_command(TARGET "Nanox"
-                   COMMAND ./bootstrap && ./configure
-                                                     #--with-gasnet=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/local/gasnet/
-                                                      --with-gasnet-include=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/include/gasnet-performance/
+                   COMMAND ./bootstrap && ./configure --with-gasnet-include=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/include/gasnet-performance/
                                                       --with-gasnet-lib=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/lib/gasnet-performance/
-#                                                      --with-gasnet-lib=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/gasnet/lib/
                                                       --disable-instrumentation --disable-instrumentation-debug --disable-debug --with-gasnet=/usr/local/gasnet-performance/
-							--prefix=/usr --with-extrae=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-extrae/pkg/usr/)
+						      --prefix=/usr --with-extrae=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-extrae/pkg/usr/
+					              LDFLAGS='-L${CMAKE_CURRENT_LIST_DIR}/../axiom-allocator/src/ -L${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-allocator-lib/src -L${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-nic/axiom_user_library/')
+
 add_custom_command(TARGET "Nanox"
                    COMMAND make install DESTDIR=${installdir} && make clean)
 
@@ -35,13 +35,12 @@ add_custom_command(TARGET "Nanox"
 
 
 add_custom_command(TARGET "Nanox"
-                   COMMAND ./bootstrap && ./configure  --disable-debug  --disable-performance
-                                                     #--with-gasnet=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/local/gasnet/
+                   COMMAND ./bootstrap && ./configure  --enable-debug  --disable-performance --enable-instrumentation-debug
                                                       --with-gasnet-include=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/include/gasnet-performance/
                                                       --with-gasnet-lib=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/lib/gasnet-performance/
 						      --with-gasnet=/usr/local/gasnet-performance/
-							--prefix=/usr --with-extrae=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-extrae/pkg/usr/)
-#                                                      --with-gasnet-lib=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-gasnet/pkg/usr/gasnet/lib/
+							--prefix=/usr --with-extrae=${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-extrae/pkg/usr/
+						LDFLAGS='-L${CMAKE_CURRENT_LIST_DIR}/../axiom-allocator/src/ -L${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-allocator-lib/src -L${CMAKE_CURRENT_LIST_DIR}/../axiom-evi-nic/axiom_user_library/')
 
 add_custom_command(TARGET "Nanox"
                    COMMAND make install DESTDIR=${installdir} && make clean)
