@@ -1,8 +1,8 @@
 
 
 add_custom_target(GASNET ALL
-		  DEPENDS axiom_run_api axiom_init_api axiom_common axiom_user_library
-			  axiom-allocator axiom_allocator_l1 axiom_allocator_l2)
+		  DEPENDS axiom_run_api axiom_init_api axiom_common axiom_user_api
+			  axiom_allocator axiom_allocator_l1 axiom_allocator_l2)
 
 SET(installdir "${CMAKE_CURRENT_LIST_DIR}/pkg")
 

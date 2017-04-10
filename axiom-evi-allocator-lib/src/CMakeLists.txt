@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 2.8.11)
-add_library (axiom-allocator-library freeidx_list.c init.c)
-target_include_directories (axiom-allocator-library PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_library (evi_lmm freeidx_list.c init.c)
+target_include_directories (evi_lmm PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-install(TARGETS axiom-allocator-library
+install(TARGETS evi_lmm
         ARCHIVE DESTINATION /usr/lib)

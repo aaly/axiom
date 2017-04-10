@@ -6,7 +6,7 @@ include_directories(axiom_netdev_driver/) #for axiom_user_api
 
 add_subdirectory (axiom_netdev_driver)
 add_subdirectory (axiom_switch)
-add_subdirectory (axiom_user_library)
+add_subdirectory (axiom_user_api)
 
 
 install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/include/ DESTINATION /usr/include
