@@ -10,7 +10,7 @@ add_custom_command(TARGET GASNET
                    COMMAND ./Bootstrap -y && ./configure --enable-udp --enable-debug --enable-trace --enable-backtrace --disable-parsync  --disable-smp --disable-pshm
 							 --disable-stats --disable-debug-malloc --disable-system-debug-malloc  --with-target-cxxflags='-fPIC -DGASNETI_FORCE_PIC'
                                                          --build='x86_64-unknown-linux-gnu' --libdir=/usr/lib/gasnet-debug --includedir=/usr/include/gasnet-debug
-							--prefix=/usr/local/gasnet-debug)
+							--prefix=/usr/local/gasnet-debug --enable-axiom)
 
 add_custom_command(TARGET GASNET
                    COMMAND make install MANUAL_LIBCFLAGS='-fPIC -DGASNETI_FORCE_PIC' MANUAL_CXXFLAGS='-fPIC -DGASNETI_FORCE_PIC' MANUAL_CFLAGS='-fPIC -DGASNETI_FORCE_PIC' 
@@ -24,7 +24,7 @@ add_custom_command(TARGET GASNET
 							 --disable-stats --disable-debug-malloc --disable-system-debug-malloc
                                                          --build='x86_64-unknown-linux-gnu' --disable-backtrace-ladebug
 							 --libdir=/usr/lib/gasnet-performance --includedir=/usr/include/gasnet-performance
-							 --prefix=/usr/local/gasnet-performance)
+							 --prefix=/usr/local/gasnet-performance --enable-axiom)
 
 add_custom_command(TARGET GASNET
                    COMMAND make install  MANUAL_LIBCFLAGS='-fPIC -DGASNETI_FORCE_PIC' MANUAL_CXXFLAGS='-fPIC -DGASNETI_FORCE_PIC' MANUAL_CFLAGS='-fPIC -DGASNETI_FORCE_PIC' 
